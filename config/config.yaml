@@ -1,0 +1,48 @@
+# Validation and workflow rules for Sarvam AI Stamp Intelligence Agent
+expected_authorities:
+  - Government Authority
+  - Revenue Department
+
+expected_signers:
+  - John Doe
+  - Jane Officer
+
+expected_designations:
+  - Officer
+  - Deputy Commissioner
+
+required_elements:
+  - seal
+  - signature
+  - date
+  - signer_name
+  - designation
+
+allowed_stamp_colors:
+  - red
+  - blue
+  - green
+
+# Signature should usually appear in lower section of page
+signature_lower_page_min_ratio: 0.55
+
+# Stamp should be reasonably near the signature
+max_stamp_signature_distance_ratio: 0.45
+
+# If any of these checks fail, reject directly
+reject_on_fail_checks:
+  - seal_presence
+  - signature_presence
+  - dated_imprint
+  - signer_name_present
+  - designation_present
+
+# Fail/warn on these checks routes to fraud review
+fraud_review_checks:
+  - seal_text_readable
+  - authority_match
+  - stamp_placement
+  - ink_color_plausibility
+  - signature_placement
+
+fraud_review_warn_threshold: 2

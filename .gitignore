@@ -1,0 +1,38 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Environment Variables & Sensitive Credentials
+.env
+.env.*
+!.env.example
+
+# Sensitive Documents & Inputs
+inputs/*
+!inputs/.gitkeep
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.tiff
+
+# Output generated reports & demo images
+output/*
+!output/.gitkeep
+
+# System & Tool Logs / Caches
+pip_install.log
+.abacusai/
+.abacus.donotdelete
+.DS_Store
+Thumbs.db
+
